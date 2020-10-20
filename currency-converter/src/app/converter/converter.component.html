@@ -4,7 +4,7 @@
   <input type="number" placeholder="amount" [(ngModel)]="amount" />
 
   <label>From: {{ from }}</label>
-  <select [(ngModel)]="from">
+  <select [(ngModel)]="from" (change)="loadRates()">
     <option *ngFor="let c of getAllCurrencies()" [value]="c">{{ c }}</option>
   </select>
   <label>To: {{ to }}</label>
