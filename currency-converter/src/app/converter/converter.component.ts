@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CurrencyExchangeService } from '../services/exchange-rates.service';
 
 @Component({
   selector: 'app-converter',
@@ -10,15 +11,22 @@ export class ConverterComponent implements OnInit {
   amount = 1;
   from = 'NZD';
   to = 'GBP';
-  rate = 0.51;
+  rates: {[key: string]: number};
 
   convert(): number {
-    return this.amount * this.rate;
+    return this.amount * this.rates[this.to];
   }
 
-  constructor() { }
+  loadRates(){
+    this.service.getRates(this.from).subscribe(res => this.rates = res.rates);
+  }
+
+  constructor(private service: CurrencyExchangeService) {
+    
+  }
 
   ngOnInit(): void {
+    this.loadRates();
   }
 
 }

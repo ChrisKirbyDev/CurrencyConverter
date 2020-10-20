@@ -1,14 +1,18 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {ExchangeRatesResponse} from './payloads/exchange-rates-response';
+import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class ExchangeRatesService {
+export class CurrencyExchangeService {
 
-  constructor(private httpClient:HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
-  getRates(base: string){
-    return this.httpClient.get(`https://api.exchangeratesapi.io/latest?base=${base}`)
+  getRates(base: string): Observable<ExchangeRatesResponse> {
+    return this.http.get<ExchangeRatesResponse>(`https://api.exchangeratesapi.io/latest?base=${base}`);
   }
 }
