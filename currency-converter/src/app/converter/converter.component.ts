@@ -7,6 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConverterComponent implements OnInit {
 
+  amount = 1;
+  from = 'NZD';
+  to = 'GBP';
+  rate = 0.51;
+
+  convert(): number {
+    return this.amount * this.rate;
+  }
+
   constructor() { }
 
   ngOnInit(): void {
