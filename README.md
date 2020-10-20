@@ -1,5 +1,7 @@
 # Currency Converter
 
+[Live Site](https://concurr.herokuapp.com/)
+
 I started this project to provide myself with an introduction to Typescript and to the Angular Framework. I was attracted to these technologies because;
 
 - TypeScript simplifies JavaScript code, making it easier to read and debug.
@@ -23,6 +25,7 @@ This application provides you with a currency converter that uses the latest rat
 - Event binding
 - HttpClient
 - Observables
+- Deploying Angular with Express
 
 ### API
 
