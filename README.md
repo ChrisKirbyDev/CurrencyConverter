@@ -30,4 +30,4 @@ Powered by: https://exchangeratesapi.io/
 
 ### How to run locally
 
-instructions provided within the currency converter folder ReadME
+Instructions provided within the currency converter folder ReadME
